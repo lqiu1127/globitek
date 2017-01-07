@@ -98,8 +98,7 @@
         db_close($db);
 
         // redirect user to success page
-        header("Location: public/registration_success.php");
-        exit;
+        redirect_to("public/registration_success.php");
       } else {
          // The SQL INSERT statement failed.
          // Just show the error, not the form
