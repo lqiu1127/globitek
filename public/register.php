@@ -71,6 +71,20 @@
         $username = trim($_POST['username']);
       }
     }
+   
+    // if the names are valid values check is there is already the same entry
+    if ($valid && !is_blank($_POST['username'])){
+      // Write SQL quary 
+      $sql = sprintf ("SELECT * FROM users WHERE username = \"%s\"; ", $username);
+
+      //common error is not using the quary correctly or not accessing the num_rows correctly
+      $result = $db->query($sql);
+      if($result->num_rows > 0){
+        //ther username is already in use
+        $errors[] = "The username is already in use.";
+        $valid = false;
+      }
+    }
 
     // if there were no errors, submit data to database
     if ($valid){
