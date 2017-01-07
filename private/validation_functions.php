@@ -28,4 +28,15 @@
     return preg_match("/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/ ", $value);
   }
 
+  // has_valid_name_format('Loe-Garb's')
+  function has_valid_name_format($value) {
+    // regex for names in generals
+    return preg_match("/^[A-Za-z_'.-]+$/ ", $value);
+  }
+
+  // has_valid_username_format('Loe-Garb's')
+  function has_valid_username_format($value) {
+    // regex for usernames in generals
+    return preg_match("/^[A-Za-z_]+$/ ", $value);
+  }
 ?>
