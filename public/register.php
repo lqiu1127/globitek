@@ -22,6 +22,9 @@
       } elseif (!has_length($_POST['first_name'], ['min' => 2, 'max' => 255])) {
         $errors[] = "First name must be between 2 and 255 characters.";
         $valid = false;
+      } elseif (!has_valid_name_format($_POST['first_name'])){
+        $errors[] = "Enter a valid first name without special characters.";
+        $valid = false;
       } else {
         $first_name = trim($_POST['first_name']);
       }
@@ -32,6 +35,9 @@
         $valid = false;
       } elseif (!has_length($_POST['last_name'], ['min' => 2, 'max' => 255])) {
         $errors[] = "Last name must be between 2 and 255 characters.";
+        $valid = false;
+      } elseif (!has_valid_name_format($_POST['last_name'])){
+        $errors[] = "Enter a valid last name without special characters.";
         $valid = false;
       } else {
         $last_name = trim($_POST['last_name']);
@@ -58,11 +64,14 @@
       } elseif (!has_length($_POST['username'], ['min' => 8, 'max' => 255])) {
         $errors[] = "Username must be longer than 8 characters.";
         $valid = false;
+      } elseif (!has_valid_username_format($_POST['username'])){
+        $errors[] = "Enter a valid username without special characters.";
+        $valid = false;
       } else {
         $username = trim($_POST['username']);
       }
     }
-   
+
     // if there were no errors, submit data to database
     if ($valid){
       // Write SQL INSERT statement
