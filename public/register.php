@@ -46,7 +46,30 @@
   ?>
 
   <!-- TODO: HTML form goes here -->
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
+    First Name: 
+    <br>
+      <input type="text" name="first_name" value="<?php echo $first_name; ?>">
+    </br>
+    Last Name:
+    <br>
+      <input type="text" name="last_name" value="<?php echo $last_name; ?>">
+    </br>
+    Email:
+    <br>
+      <input type="text" name="email" value="<?php echo $email; ?>">
+    </br>
+    Username:
+    <br>
+      <input type="text" name="username" value="<?php echo $username; ?>">
+    </br>
+    <br/>
+    <!--
+    <input type="reset" class="button" value="Reset" onclick="reload_page()"/>
+    -->
+    <input type="submit" class="button" name="submit" value="Submit">
+  </form>
 </div>
 
 <?php include(SHARED_PATH . '/footer.php'); ?>
