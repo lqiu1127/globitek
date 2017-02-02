@@ -1,14 +1,14 @@
 <?php
   require_once('/private/initialize.php');
   // Set default values for all variables the page needs.
-  $first_name = $last_name = $email = $username = "";
-  $valid = true;
-  $errors = [];
+  
   // if this is a POST request, process the form
   // Hint: Write these in private/functions.php
 
 
     if (is_post_request()) {
+      $first_name = $last_name = $email = $username = "";
+      $valid = true;
       $errors = [];
       // Confirm that POST values are present before accessing them.
 
