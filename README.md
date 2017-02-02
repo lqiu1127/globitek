@@ -6,49 +6,52 @@ Time spent: **10** hours spent in total
 
 The following **required** functionality is completed:
 
-1. [ ]  Required: Public page: Territories
-  * [ ]  Required: The page should be called "territories.php".
-  * [ ]  Required: It displays a bulleted list of states sorted alphabetically.
-  * [ ]  Required: There is a bulleted list of territories indented below each state.
-  * [ ]  Required: The territories are sorted based on a custom position value.
-  * [ ]  Required: Set territory position values such that:
-    * [ ]  'Northern' always comes before 'Southern'.
-    * [ ]  'Western' always comes before 'Eastern'.
-    * [ ]  Chicago, Las Vegas, and New York are before any "Outside" territories.
-  * [ ]  Required: When a territory name is the same as its state name, it does not display the territory name, just the state name.
-  * [ ]  Required: There is a list of assigned salespeople below each territory.
-    * [ ]  Sorted by last name then first name, unbulleted, unindented.
-    * [ ]  Note that New York City should have two salesperson assignments.
-  * [ ]  Required: Each salesperson's name is a link to a page with more details (salesperson.php).
+1. [x]  Required: Create a Users Table
+  * [x]  Required: Use the command line to connect to the database "globitek".
+  * [x]  Required: Define a table "users" with the required columns.
 
-2. [ ]  Required: Public page: Salesperson
-  * [ ]  Required: The page should be called "salesperson.php".
-  * [ ]  Required: It has a link back to the territories.php page at the top.
-  * [ ]  Required: It displays contact information (name, phone, email) for a single salesperson.
-  * [ ]  Required: It displays a bulleted list of the salesperson's territories.
-  * [ ]  Required: It redirects to territories.php if the requested salesperson is not found.
+2. [x]  Required: Create a Page with an HTML Form
+  * [x]  Required: It has required text inputs.
+  * [x]  Required: It submits to itself.
+  * [x]  Required: It looks correct in a browser.
+  
+3. [x]  Required: Detect when the form is submitted.
+  * [x]  Required: When page loads, page displays the form.
+  * [x]  Required: When form submits, page retrieves the form data.
 
-3. [ ]  Required:  Organize code to keep functions and database credentials private. Use good code formatting and code comments to make your code clear to others.
+4. [x]  Required: Validate form data.
+  * [x]  Required: Require the provided validation functions library.
+  * [x]  Required: Validate the presence of all form values.
+  * [x]  Required: Validate that no values are longer than 255 characters.
+  * [x]  Required: Validate that first\_name and last\_name have at least 2 characters.
+  * [x]  Required: Validate that username has at least 8 characters.
+  * [x]  Required: Validate that email contains a "@".
 
-4. [ ]  Required:  All dynamic content being output to HTML should be encoded using best practices.
+5. [x]  Required: Display form errors if any validations fail.
+  * [x]  Required: Do not submit the data to the database.
+  * [x]  Required: Redisplay the form with the submitted values filled in.
+  * [x]  Required: Report all errors as a list above the form.
+  * [x]  Required: Test each field to ensure you get the expected errors.
 
-5. [ ]  Required:  Use database best practices such as freeing results from memory and closing the database connection when your code is finished using them.
+6. [x]  Required: Submit successfully-validated form values to the database.
+  * [x]  Required: Write an SQL insert statement.
+  * [x]  Required: Add current date and time to "created\_at".
+  * [x]  Required: Follow best practices regarding the query result and database connection.
+  * [x]  Required: Use the command line to check the records.
+
+7. [x]  Required: Redirect the user to a confirmation page.
+    * [x]  Required: Locate the page "public/registration\_success.php".
+    * [x]  Required: Redirect the user to the new page. ([Tips](#!hints))
+
+8. [x]  Required: Sanitize all dynamic output for HTML. ([Tips](#!hints))
+
 
 The following advanced user stories are optional:
 
-* [ ]  Bonus: Move the header and footer of the HTML template into separate files and use include() to load them. Make sure the HTML title is still correct for both pages.
+* [x]  Bonus 1: Validate that form values contain only whitelisted characters.
 
-* [ ]  Bonus: Create a new file "private/initialize.php". This file should become the only required file at the top of your PHP pages. It would then require all the other PHP files that are needed as well as create a new database connection.
+* [x]  Bonus 2: Validate the uniqueness of the username.
 
-* [ ]  Bonus: Add a countries table with a one-to-many relationship to states. Add "United States" as the only country and assign all 50 states to it. Add it to the public pages and indent the states list below it.
-
-* [ ]  Bonus: If you added a countries table, use the MySQL console to add Canada as a country and populate the database with a few provinces and territories for Canada. Pick a salesperson or two and make assignments for all of the new territories.
-
-* [ ]  Bonus: Convert all SQL queries into callable functions.
-
-* [ ]  Advanced: Create a separate set of "staff area" pages in directory called "staff" which display states, territories, and salespeople. Each one should have a list view showing all records and a detail view for examining a single record.
-
-* [ ]  Advanced: If you created "staff area" pages, nest the pages for viewing territories inside the pages for viewing states. A user would select a state in order to view a list of the territories belonging to that state only.
 
 ## Video Walkthrough
 
